@@ -2,8 +2,14 @@
  * Created by aeife on 23/02/14.
  */
 
-var app = angular.module('app', []);
+var app = angular.module('app', ['knightGame', 'ngRoute']);
 
-app.controller('AppCtrl', function($scope) {
-   $scope.msg = "Hello, World!";
+app.config(function($routeProvider){
+
+});
+
+app.controller('AppCtrl', function($scope, knightGame) {
+    $scope.msg = "Hello, World!";
+
+    knightGame.start();
 });
