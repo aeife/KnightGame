@@ -22,13 +22,4 @@ describe("knightGame", function () {
         expect(knightGame.getConfig().knightCount).toBe(99);
     });
 
-    it("should init right amount of knights", function () {
-        knightGame.config({
-           knightCount: 5
-        });
-
-        knightGame.start();
-
-        expect(knightGame.knights.length).toBe(5);
-    });
 });

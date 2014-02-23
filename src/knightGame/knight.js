@@ -8,15 +8,27 @@ angular.module('knightGame.knight', [])
 
         function Knight(health, damage) {
             this.health = health;
-            this.damage = damage;
+            this.attackValue = damage;
+            this.dead = false;
         }
 
         Knight.prototype.getHealth = function () {
             return this.health;
         }
 
-        Knight.prototype.getDamage = function () {
-            return this.damage;
+        Knight.prototype.getAttackValue = function () {
+            return this.attackValue;
+        }
+
+        Knight.prototype.takeDamage = function (damage) {
+            this.health -= damage;
+            if (this.health < 0) {
+                this.dead = true;
+            }
+        }
+
+        Knight.prototype.attack = function (enemy) {
+            enemy.takeDamage(this.attackValue);
         }
 
         return Knight;

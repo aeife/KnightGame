@@ -9,13 +9,14 @@
     <script src="src/app.js"></script>
     <script src="src/knightGame/knightGame.js"></script>
     <script src="src/knightGame/knight.js"></script>
+    <script src="src/knightGame/linearStrategy.js"></script>
 
     <div ng-app="app">
         <div ng-controller="AppCtrl">
             My Msg: {{msg}}
             <ul>
                 <li ng-repeat="knight in knightGame.knights">
-                    {{knight}}
+                    {{$index}}: {{knight}}
                 </li>
             </ul>
         </div>
