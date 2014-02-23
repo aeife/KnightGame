@@ -13,6 +13,11 @@
     <div ng-app="app">
         <div ng-controller="AppCtrl">
             My Msg: {{msg}}
+            <ul>
+                <li ng-repeat="knight in knightGame.knights">
+                    {{knight}}
+                </li>
+            </ul>
         </div>
     </div>
 </body>

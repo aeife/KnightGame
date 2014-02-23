@@ -11,5 +11,10 @@ app.config(function($routeProvider){
 app.controller('AppCtrl', function($scope, knightGame) {
     $scope.msg = "Hello, World!";
 
+    $scope.knightGame = knightGame;
+
+    knightGame.config({
+        knightCount: 5
+    });
     knightGame.start();
 });
