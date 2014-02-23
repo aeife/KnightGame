@@ -11,6 +11,14 @@ angular.module('knightGame.knight', [])
             this.damage = damage;
         }
 
+        Knight.prototype.getHealth = function () {
+            return this.health;
+        }
+
+        Knight.prototype.getDamage = function () {
+            return this.damage;
+        }
+
         return Knight;
 
     });
