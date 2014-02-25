@@ -37,6 +37,11 @@ angular.module('knightGame', ['knightGame.strategy.linearStrategy'])
             makeTurn: function () {
                 config.strategy.current.attack(config.strategy.next);
                 config.strategy.turn();
+            },
+            getKnightStatus: function(knight) {
+                if (knight === config.strategy.current) {
+                    return "current";
+                }
             }
     }
     });

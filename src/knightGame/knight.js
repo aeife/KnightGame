@@ -9,6 +9,7 @@ angular.module('knightGame.knight', [])
         function Knight(health, damage) {
             this.health = health;
             this.attackValue = damage;
+            this.armorValue = 0;
             this.dead = false;
         }
 
@@ -23,6 +24,7 @@ angular.module('knightGame.knight', [])
         Knight.prototype.takeDamage = function (damage) {
             this.health -= damage;
             if (this.health < 0) {
+                this.health = 0;
                 this.dead = true;
             }
         }
@@ -33,4 +35,26 @@ angular.module('knightGame.knight', [])
 
         return Knight;
 
+    })
+
+    .directive('knight', function() {
+        return {
+            templateUrl: 'src/knightGame/knight.html',
+            restrict: 'E',
+            scope: {
+                obj: '=',
+                status: '='
+            },
+            controller: function($scope) {
+                $scope.getImgColor = function(){
+                    if ($scope.status.current) {
+                        return 'green';
+                    } else if ($scope.status.next) {
+                        return 'red';
+                    } else {
+                        return 'black';
+                    }
+                }
+            }
+        }
     });

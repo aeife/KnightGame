@@ -5,16 +5,47 @@
     padding: 2.8em;
     border: dashed 1px;
     border-radius: 50%;
-    margin: 1.75em auto 0;
+    margin: 3em auto 0;
 }
 
 .circle-container-item {
     display: block;
     overflow: hidden;
     position: absolute;
-    top: 55%;
+    top: 50%;
     left: 50%;
     width: 4em;
-    height: 4em;
     margin: -2em;
+    background-color: white;
 }
+
+.knight {
+    /*border: solid 2px black;*/
+}
+
+.knight img {
+    width: 100%;
+}
+
+.current {
+    /*border-color: green;*/
+    color: green;
+}
+
+.next {
+    /*border-color: red;*/
+    color: red;
+}
+
+.dead {
+    opacity: 0.5;
+}
+
+.progress {
+    margin-bottom: 0;
+}
+
+/*
+ image sources
+ http://www.wpclipart.com/recreation/games/chess/chess_set_1/chess_piece_black_knight.png.html
+*/

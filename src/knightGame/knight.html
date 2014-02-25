@@ -1,0 +1,15 @@
+<div class="knight" ng-class="{current: status.current, next: status.next, dead: obj.dead}">
+    <img src="./img/knight_{{getImgColor()}}.png" alt=""/>
+    <div>
+        <div class="text-center"><span class="glyphicon glyphicon-upload"></span> {{obj.attackValue}}</div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar progress-bar-danger" role="progressbar" style="width: {{obj.health}}%;">
+            {{obj.health}}
+        </div>
+    </div>
+</div>
+
+
+<!--<div ng-show="knight === knightGame.getConfig().strategy.current">CURRENT</div>-->
+<!--<div ng-show="knight === knightGame.getConfig().strategy.next">NEXT</div>-->

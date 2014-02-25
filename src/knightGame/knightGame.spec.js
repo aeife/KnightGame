@@ -21,5 +21,4 @@ describe("knightGame", function () {
 
         expect(knightGame.getConfig().knightCount).toBe(99);
     });
-
 });
