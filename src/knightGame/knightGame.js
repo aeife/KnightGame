@@ -22,11 +22,10 @@ angular.module('knightGame', ['knightGame.strategy.linearStrategy'])
                   //  this.knights.push(new Knight(100, 10));
                 //}
 
-                while (!s.finished) {
-                    s.current.attack(s.next);
+//                while (!s.finished) {
+//                    this.makeTurn();
+//                }
 
-                    s.turn();
-                }
             },
             config: function (newConfig) {
                angular.extend(config, newConfig);
@@ -34,6 +33,10 @@ angular.module('knightGame', ['knightGame.strategy.linearStrategy'])
             getConfig: function () {
                 return config;
             },
-            knights: []
+            knights: [],
+            makeTurn: function () {
+                config.strategy.current.attack(config.strategy.next);
+                config.strategy.turn();
+            }
     }
     });

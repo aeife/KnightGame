@@ -49,6 +49,19 @@ describe("linearStrategy", function () {
         expect(linearStrategy.next).toBe(linearStrategy.knights[0]);
     });
 
+    it("should select correct next knights when multiple knights died", function () {
+        linearStrategy.init(5);
+
+        linearStrategy.current = linearStrategy.knights[4];
+        linearStrategy.next = linearStrategy.knights[0];
+        linearStrategy.knights[0].dead = true;
+        linearStrategy.knights[1].dead = true;
+        linearStrategy.knights[3].dead = true;
+        linearStrategy.turn();
+        expect(linearStrategy.current).toBe(linearStrategy.knights[2]);
+        expect(linearStrategy.next).toBe(linearStrategy.knights[4]);
+    });
+
     it("next and current should be equal when last man standing", function () {
         linearStrategy.init(3);
 

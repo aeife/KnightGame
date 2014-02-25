@@ -14,7 +14,7 @@ app.controller('AppCtrl', function($scope, knightGame) {
     $scope.knightGame = knightGame;
 
     knightGame.config({
-        knightCount: 3
+        knightCount: 5
     });
     knightGame.start();
 });

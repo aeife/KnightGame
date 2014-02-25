@@ -2,6 +2,14 @@
 <html>
 <head>
     <title>KnightGame</title>
+    <style>
+        .current {
+            color: green;
+        }
+        .next {
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <script src="bower_components/angular/angular.js"></script>
@@ -14,9 +22,13 @@
     <div ng-app="app">
         <div ng-controller="AppCtrl">
             My Msg: {{msg}}
+            {{knightGame.getConfig().strategy.finished}} {{knightGame.getConfig().strategy.turnCount}}
+            <a ng-click="knightGame.makeTurn()">TURN</a>
             <ul>
                 <li ng-repeat="knight in knightGame.knights">
                     {{$index}}: {{knight}}
+                    <div ng-show="knight === knightGame.getConfig().strategy.current">CURRENT</div>
+                    <div ng-show="knight === knightGame.getConfig().strategy.next">NEXT</div>
                 </li>
             </ul>
         </div>
