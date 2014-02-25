@@ -16,5 +16,11 @@ app.controller('AppCtrl', function($scope, knightGame) {
     knightGame.config({
         knightCount: 5
     });
+
+    $scope.degs = [];
+    for (var i = 0; i < knightGame.getConfig().knightCount; i++) {
+        $scope.degs.push(360 / knightGame.getConfig().knightCount * i +270);
+    }
+    console.log($scope.degs);
     knightGame.start();
 });

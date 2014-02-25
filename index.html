@@ -10,27 +10,33 @@
             color: red;
         }
     </style>
+    <link rel="stylesheet" href="./style/main.css"/>
 </head>
 <body>
     <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="src/app.js"></script>
-    <script src="src/knightGame/knightGame.js"></script>
-    <script src="src/knightGame/knight.js"></script>
-    <script src="src/knightGame/linearStrategy.js"></script>
+                <script src="bower_components/angular-route/angular-route.js"></script>
+                <script src="src/app.js"></script>
+                <script src="src/knightGame/knightGame.js"></script>
+                <script src="src/knightGame/knight.js"></script>
+                <script src="src/knightGame/linearStrategy.js"></script>
 
-    <div ng-app="app">
-        <div ng-controller="AppCtrl">
-            My Msg: {{msg}}
-            {{knightGame.getConfig().strategy.finished}} {{knightGame.getConfig().strategy.turnCount}}
-            <a ng-click="knightGame.makeTurn()">TURN</a>
-            <ul>
-                <li ng-repeat="knight in knightGame.knights">
+                <div ng-app="app">
+                    <div ng-controller="AppCtrl">
+                        My Msg: {{msg}}
+                        {{knightGame.getConfig().strategy.finished}} {{knightGame.getConfig().strategy.turnCount}}
+                        <a ng-click="knightGame.makeTurn()">TURN</a>
+                        <div class="circle-container">
+
+                            <li ng-repeat="knight in knightGame.knights"
+                                class="circle-container-item"
+                                style="-webkit-transform: rotate({{degs[$index]}}deg) translate(12em) rotate(-{{degs[$index]}}deg)">
                     {{$index}}: {{knight}}
-                    <div ng-show="knight === knightGame.getConfig().strategy.current">CURRENT</div>
-                    <div ng-show="knight === knightGame.getConfig().strategy.next">NEXT</div>
+
+
+                    <!--<div ng-show="knight === knightGame.getConfig().strategy.current">CURRENT</div>-->
+                    <!--<div ng-show="knight === knightGame.getConfig().strategy.next">NEXT</div>-->
                 </li>
-            </ul>
+            </div>
         </div>
     </div>
 </body>

@@ -1,0 +1,20 @@
+.circle-container {
+    position: relative;
+    width: 24em;
+    height: 24em;
+    padding: 2.8em;
+    border: dashed 1px;
+    border-radius: 50%;
+    margin: 1.75em auto 0;
+}
+
+.circle-container-item {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    width: 4em;
+    height: 4em;
+    margin: -2em;
+}
