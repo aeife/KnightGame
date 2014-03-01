@@ -1,0 +1,24 @@
+{
+  "name": "KnightGame",
+  "version": "0.0.0",
+  "description": "KnightGame ==========",
+  "main": "index.html",
+  "dependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-uglify": "~0.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/aeife/KnightGame.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aeife/KnightGame/issues"
+  },
+  "homepage": "https://github.com/aeife/KnightGame"
+}

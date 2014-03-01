@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="grunt" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file:///usr/local/lib/node_modules/grunt-cli/lib" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file:///usr/local/lib/node_modules/grunt-cli/lib" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>
