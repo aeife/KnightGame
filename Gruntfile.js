@@ -19,10 +19,20 @@ module.exports = function (grunt) {
                 ],
                 dest: 'build/app.min.js'
             }
+        },
+        watch: {
+            scripts: {
+                files: [
+                    'src/**/*.js',
+                    '!src/**/*.spec.js'
+                ],
+                tasks: ['build']
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-ngmin');
 
     grunt.registerTask('build', ['ngmin', 'uglify']);
