@@ -1,5 +1,10 @@
 module.exports = function (grunt) {
 
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-ngmin');
+    grunt.loadNpmTasks('grunt-karma');
+
     grunt.initConfig({
         ngmin: {
             build: {
@@ -27,13 +32,22 @@ module.exports = function (grunt) {
                     '!src/**/*.spec.js'
                 ],
                 tasks: ['build']
+            },
+            tests: {
+                files: [
+                    'src/**/*.js'
+                ],
+                tasks: ['karma']
+            }
+        },
+        karma: {
+            unit: {
+                singleRun: true,
+                configFile: 'karma.conf.js'
+//                autoWatch: true
             }
         }
     });
-
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-ngmin');
 
     grunt.registerTask('build', ['ngmin', 'uglify']);
 }
