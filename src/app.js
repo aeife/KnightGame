@@ -14,7 +14,7 @@ app.controller('AppCtrl', function($scope, knightGame) {
     $scope.knightGame = knightGame;
 
     knightGame.config({
-        knightCount: 5
+        knightCount: 10
     });
 
     $scope.degs = [];
